@@ -1,7 +1,8 @@
-package com.reachmobi.sportsdream
+package com.reachmobi.sportsdream.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.reachmobi.sportsdream.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
