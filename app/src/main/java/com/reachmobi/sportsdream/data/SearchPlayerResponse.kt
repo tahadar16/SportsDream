@@ -1,5 +1,8 @@
 package com.reachmobi.sportsdream.data
 
+import com.squareup.moshi.Json
+
 data class SearchPlayerResponse(
-    var player: Player
+    @Json(name = "player")
+    var player: List<Player> = listOf()
 )
