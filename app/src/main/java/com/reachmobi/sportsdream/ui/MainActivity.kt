@@ -8,7 +8,9 @@ import androidx.navigation.compose.rememberNavController
 import com.reachmobi.sportsdream.R
 import com.reachmobi.sportsdream.ui.navigation.Screen
 import com.reachmobi.sportsdream.ui.theme.SportsDreamTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
