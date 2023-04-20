@@ -3,6 +3,6 @@ package com.reachmobi.sportsdream.data
 import com.squareup.moshi.Json
 
 data class SearchPlayerResponse(
-    @Json(name = "player")
-    var player: List<Player> = listOf()
+    @field:Json(name = "player")
+    var player: MutableList<Player>? = mutableListOf()
 )
