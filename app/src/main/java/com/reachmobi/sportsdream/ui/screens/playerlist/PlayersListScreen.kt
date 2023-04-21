@@ -1,4 +1,4 @@
-package com.reachmobi.sportsdream.ui.screens
+package com.reachmobi.sportsdream.ui.screens.playerlist
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,21 +18,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdSize
-import com.google.android.gms.ads.AdView
 import com.reachmobi.sportsdream.R
-import com.reachmobi.sportsdream.data.Player
 import com.reachmobi.sportsdream.ui.components.BannerAdView
-import com.reachmobi.sportsdream.ui.screens.playerlist.PlayerListSection
-import com.reachmobi.sportsdream.ui.theme.Pink400
-import com.reachmobi.sportsdream.ui.theme.White
 import com.reachmobi.sportsdream.viewmodel.PlayerViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Provides option to search for players with their names and display the result in a list
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlayersListScreen(navController: NavHostController) {
@@ -99,6 +93,7 @@ fun PlayersListScreen(navController: NavHostController) {
                 }
             }
 
+            //Added monetization purpose
             Box(modifier = Modifier.fillMaxWidth(),contentAlignment = Alignment.Center) {
                 BannerAdView(false)
             }

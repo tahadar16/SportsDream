@@ -2,15 +2,12 @@
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.navArgument
 import com.reachmobi.sportsdream.data.Player
 import com.reachmobi.sportsdream.ui.navigation.Screen
 import com.reachmobi.sportsdream.ui.screens.PlayerDetailScreen
-import com.reachmobi.sportsdream.ui.screens.PlayersListScreen
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import com.reachmobi.sportsdream.ui.screens.playerlist.PlayersListScreen
 
 //@ExperimentalCoroutinesApi
 //@ExperimentalPermissionsApi
