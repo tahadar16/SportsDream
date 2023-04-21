@@ -18,10 +18,15 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.reachmobi.sportsdream.R
 import com.reachmobi.sportsdream.data.Player
+import com.reachmobi.sportsdream.ui.components.BannerAdView
 import com.reachmobi.sportsdream.ui.screens.playerlist.PlayerListSection
 import com.reachmobi.sportsdream.ui.theme.Pink400
 import com.reachmobi.sportsdream.ui.theme.White
@@ -36,7 +41,10 @@ fun PlayersListScreen(navController: NavHostController) {
     val playerListState = viewModel.playerListState.value
 
     Surface {
-        Column(Modifier.fillMaxSize().background(color = Color.White)) {
+        Column(
+            Modifier
+                .fillMaxSize()
+                .background(color = Color.White)) {
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
@@ -90,6 +98,11 @@ fun PlayersListScreen(navController: NavHostController) {
                     Text(fontSize = 16.sp, text = stringResource(id = R.string.search))
                 }
             }
+
+            Box(modifier = Modifier.fillMaxWidth(),contentAlignment = Alignment.Center) {
+                BannerAdView(false)
+            }
+
             playerListState.data?.let { playersList->
                 if (playersList.isNotEmpty()) {
                     PlayerListSection(playersList = playersList, navController)
