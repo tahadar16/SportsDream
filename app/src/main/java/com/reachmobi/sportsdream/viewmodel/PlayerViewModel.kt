@@ -16,15 +16,11 @@ class PlayerViewModel @Inject constructor(
     private val playerRepository: PlayerRepository
 ) : ViewModel() {
 
-    //    val playerList: MutableStateFlow<MutableList<Player>> = MutableStateFlow(mutableListOf())
     private var _playerListState = mutableStateOf(PlayerListState())
     val playerListState: State<PlayerListState> = _playerListState
 
     fun searchPlayers(searchText: String) {
         viewModelScope.launch {
-//            _playerListState.value = PlayerListState(isLoading = true)
-//            val response = playerRepository.searchPlayer(searchText)
-//            when (response) {
             playerRepository.searchPlayer(searchText).collect { response ->
                 when (response) {
                     is ApiResult.Success -> _playerListState.value = PlayerListState(

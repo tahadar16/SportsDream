@@ -92,7 +92,7 @@ fun PlayersListScreen(navController: NavHostController) {
             }
             playerListState.data?.let { playersList->
                 if (playersList.isNotEmpty()) {
-                    PlayerListSection(playersList = playersList)
+                    PlayerListSection(playersList = playersList, navController)
                 } else {
                     Text(
                         text = stringResource(id = R.string.no_players_found),
@@ -104,7 +104,7 @@ fun PlayersListScreen(navController: NavHostController) {
                     )
                 }
             }
-            // if there is an error loading the report
+            // if there is an error loading the data
             if (playerListState.hasError) {
                 Box(modifier = Modifier.fillMaxSize(),contentAlignment = Alignment.Center) {
                     Text(

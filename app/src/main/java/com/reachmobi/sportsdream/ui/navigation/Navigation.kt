@@ -6,6 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.reachmobi.sportsdream.data.Player
 import com.reachmobi.sportsdream.ui.navigation.Screen
 import com.reachmobi.sportsdream.ui.screens.PlayerDetailScreen
 import com.reachmobi.sportsdream.ui.screens.PlayersListScreen
@@ -26,7 +27,8 @@ fun SetupNavGraph(
             PlayersListScreen(navController = navController)
         }
         composable(route = Screen.PlayerDetail.route) {
-            PlayerDetailScreen(navController = navController)
+            val player = navController.currentBackStackEntry?.arguments?.getParcelable<Player>("player")
+            PlayerDetailScreen(player = player ?: Player() )
         }
     }
 }

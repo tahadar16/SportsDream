@@ -14,16 +14,21 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.reachmobi.sportsdream.R
 import com.reachmobi.sportsdream.data.Player
+import com.reachmobi.sportsdream.ui.navigation.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PlayerListItem(player: Player) {
+fun PlayerListItem(player: Player, navController: NavController) {
     Card(
-        onClick = { /*TODO*/ },
+        onClick = {
+            navController.navigate(Screen.PlayerDetail.route)
+            navController.currentBackStackEntry?.arguments?.putParcelable("player", player)
+        },
         colors = CardDefaults.cardColors(
             containerColor = Color.White,
         ),
@@ -44,15 +49,22 @@ fun PlayerListItem(player: Player) {
                     .crossfade(true)
                     .build(),
                 placeholder = painterResource(R.drawable.placeholder),
-                error =  painterResource(R.drawable.placeholder),
+                error = painterResource(R.drawable.placeholder),
                 contentDescription = "",
                 contentScale = ContentScale.FillBounds,
-                modifier = Modifier.padding(end = 8.dp).clip(CircleShape).size(80.dp)
+                modifier = Modifier
+                    .padding(end = 8.dp)
+                    .clip(CircleShape)
+                    .size(80.dp)
             )
 
             Column(Modifier.fillMaxSize()) {
-
-                Text(text = player.strPlayer ?: "", fontWeight = FontWeight.Bold, fontSize = 16.sp, maxLines = 1)
+                Text(
+                    text = player.strPlayer ?: "",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp,
+                    maxLines = 1
+                )
                 Text(text = player.strTeam ?: "", fontSize = 14.sp, maxLines = 1)
                 Text(text = player.strSport ?: "", fontSize = 14.sp, maxLines = 1)
             }
