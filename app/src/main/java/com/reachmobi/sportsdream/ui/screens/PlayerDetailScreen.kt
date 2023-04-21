@@ -23,7 +23,11 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.reachmobi.sportsdream.R
 import com.reachmobi.sportsdream.data.Player
+import com.reachmobi.sportsdream.ui.components.Title
 
+/**
+ * Detail screen to display the details of a player selected by user from the list
+ */
 @Composable
 fun PlayerDetailScreen(player: Player) {
 
@@ -47,71 +51,55 @@ fun PlayerDetailScreen(player: Player) {
                     .fillMaxWidth()
                     .fillMaxHeight(0.25f)
             )
-            Row(Modifier.padding(vertical = 5.dp).fillMaxWidth()) {
-                Text(
-                    text = stringResource(id = R.string.name),
-                    modifier = Modifier.padding(end = 5.dp),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    maxLines = 1
-
-                )
+            Row(
+                Modifier
+                    .padding(vertical = 5.dp)
+                    .fillMaxWidth()) {
+                Title(stringResource(id = R.string.name))
                 Text(
                     text = player.strPlayer ?: "",
                     fontSize = 16.sp,
                     maxLines = 1
                 )
             }
-            Row(Modifier.padding(vertical = 5.dp).fillMaxWidth()) {
-                Text(
-                    text = stringResource(id = R.string.team),
-                    modifier = Modifier.padding(end = 5.dp),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    maxLines = 1
-                )
+            Row(
+                Modifier
+                    .padding(vertical = 5.dp)
+                    .fillMaxWidth()) {
+                Title(stringResource(id = R.string.team))
                 Text(
                     text = player.strTeam ?: "",
                     fontSize = 16.sp,
                     maxLines = 1
                 )
             }
-            Row(Modifier.padding(vertical = 5.dp).fillMaxWidth()) {
-                Text(
-                    text = stringResource(id = R.string.sports),
-                    modifier = Modifier.padding(end = 5.dp),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    maxLines = 1
-                )
+            Row(
+                Modifier
+                    .padding(vertical = 5.dp)
+                    .fillMaxWidth()) {
+                Title(stringResource(id = R.string.sports))
                 Text(
                     text = player.strSport ?: "",
                     fontSize = 16.sp,
                     maxLines = 1
                 )
             }
-            Row(Modifier.padding(vertical = 5.dp).fillMaxWidth()) {
-                Text(
-                    text = stringResource(id = R.string.nationality),
-                    modifier = Modifier.padding(end = 5.dp),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    maxLines = 1
-                )
+            Row(
+                Modifier
+                    .padding(vertical = 5.dp)
+                    .fillMaxWidth()) {
+                Title(stringResource(id = R.string.nationality))
                 Text(
                     text = player.strNationality ?: "",
                     fontSize = 16.sp,
                     maxLines = 1
                 )
             }
-            Row(Modifier.padding(vertical = 5.dp).fillMaxWidth()) {
-                Text(
-                    text = stringResource(id = R.string.description),
-                    modifier = Modifier.padding(end = 5.dp),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 16.sp,
-                    maxLines = 1
-                )
+            Row(
+                Modifier
+                    .padding(vertical = 5.dp)
+                    .fillMaxWidth()) {
+                Title(stringResource(id = R.string.description))
                 Text(
                     text = player.strDescriptionEN ?: "",
                     fontSize = 16.sp,
