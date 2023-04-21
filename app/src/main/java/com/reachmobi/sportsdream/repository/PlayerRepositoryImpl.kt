@@ -6,6 +6,9 @@ import com.reachmobi.sportsdream.network.ApiService
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+/**
+ * Player repository responsible for all the data queries related to the players
+ */
 class PlayerRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : PlayerRepository {
