@@ -14,7 +14,7 @@ fun PlayerListSection(
 ) {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         items(playersList) {
-            Text(text = it.strPlayer ?: "")
+            PlayerListItem(player = it)
         }
     }
 }

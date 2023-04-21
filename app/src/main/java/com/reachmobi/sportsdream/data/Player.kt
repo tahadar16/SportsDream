@@ -17,6 +17,10 @@ data class Player(
     var strSport: String?,
     @field:Json(name = "dateBorn")
     var dateBorn: String?,
+    @field:Json(name= "strThumb")
+    var strThumb: String?,
+    @field:Json(name="strCutout")
+    var strCutout: String?,
     @field:Json(name = "strDescriptionEN")
     var strDescriptionEN: String?
 )

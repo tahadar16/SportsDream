@@ -1,5 +1,6 @@
 package com.reachmobi.sportsdream.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -23,6 +24,7 @@ import com.reachmobi.sportsdream.R
 import com.reachmobi.sportsdream.data.Player
 import com.reachmobi.sportsdream.ui.screens.playerlist.PlayerListSection
 import com.reachmobi.sportsdream.ui.theme.Pink400
+import com.reachmobi.sportsdream.ui.theme.White
 import com.reachmobi.sportsdream.viewmodel.PlayerViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -34,7 +36,7 @@ fun PlayersListScreen(navController: NavHostController) {
     val playerListState = viewModel.playerListState.value
 
     Surface {
-        Column(Modifier.fillMaxSize()) {
+        Column(Modifier.fillMaxSize().background(color = Color.White)) {
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
