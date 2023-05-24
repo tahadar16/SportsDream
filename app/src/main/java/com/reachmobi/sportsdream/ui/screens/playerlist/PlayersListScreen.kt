@@ -1,5 +1,6 @@
 package com.reachmobi.sportsdream.ui.screens.playerlist
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -67,6 +68,7 @@ fun PlayersListScreen(navController: NavHostController) {
                     },
                     trailingIcon = {
                         if (searchText != "") {
+                            Log.d("SEARCH", "PlayersListScreen: searchText cleared ($searchText)")
                             IconButton(
                                 onClick = {
                                     searchText =
@@ -88,7 +90,10 @@ fun PlayersListScreen(navController: NavHostController) {
                         focusedLeadingIconColor = MaterialTheme.colorScheme.primary,
                     )
                 )
-                TextButton(onClick = { viewModel.searchPlayers(searchText) }) {
+                TextButton(onClick = {
+                    viewModel.searchPlayers(searchText)
+                    Log.d("SEARCH", "PlayersListScreen: searched Item ($searchText)")
+                }) {
                     Text(fontSize = 16.sp, text = stringResource(id = R.string.search))
                 }
             }
@@ -114,6 +119,7 @@ fun PlayersListScreen(navController: NavHostController) {
             }
             // if there is an error loading the data
             if (playerListState.hasError) {
+                Log.d("ERROR", "PlayersListScreen: player list has error (${playerListState.errorMsg})")
                 Box(modifier = Modifier.fillMaxSize(),contentAlignment = Alignment.Center) {
                     Text(
                         text = playerListState.errorMsg ?: stringResource(id = R.string.something_went_wrong),

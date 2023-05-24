@@ -1,5 +1,6 @@
 package com.reachmobi.sportsdream.ui.screens.playerlist
 
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -26,6 +27,7 @@ import com.reachmobi.sportsdream.ui.navigation.Screen
 fun PlayerListItem(player: Player, navController: NavController) {
     Card(
         onClick = {
+            Log.d("PLAYER_ITEM", "PlayerListItem: Player card clicked (${player})")
             navController.navigate(Screen.PlayerDetail.route)
             navController.currentBackStackEntry?.arguments?.putParcelable("player", player)
         },
