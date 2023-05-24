@@ -1,4 +1,5 @@
 package com.reachmobi.sportsdream.network
 
-class WebConfig {
+object WebConfig {
+    val BASE_URL : String = "https://www.thesportsdb.com/api/v1/json/50130162/"
 }

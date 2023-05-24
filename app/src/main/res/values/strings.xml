@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">SportsDream</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
+    <string name="no_players_found">No players found</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="name">Name:</string>
+    <string name="team">Team:</string>
+    <string name="sports">Sports:</string>
+    <string name="nationality">Nationality:</string>
+    <string name="description">Description:</string>
+
+    <!-- for ad mob -->
+    <string name="ad_mob_banner_id">ca-app-pub-5474571366428116/7958806488</string>
+    <string name="ad_mob_test_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>
